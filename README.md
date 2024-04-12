@@ -1,12 +1,14 @@
-# Webpage Leaked Credentials Checker
+# Regex Scan Tool
 
-This Python script allows you to search for potential leaked credentials (e.g., passwords, API keys, tokens) in the content of a webpage using regex patterns. It's a handy tool for security assessments and monitoring web pages for sensitive information exposure.
+![Banner](config/banner.txt)
 
-## Prerequisites
+A command-line tool written in Go to scan webpages for potential leaked credentials using regex patterns.
 
-- Python 3.x installed on your system
-- `requests` library (`pip install requests`)
-- `colorama` library (`pip install colorama`)
+## Features
+
+- Detects common patterns indicative of leaked credentials within webpage content.
+- Utilizes concurrency for faster scanning of multiple URLs.
+- Displays results with colorized output for easy identification of potential issues.
 
 ## Installation
 
@@ -15,37 +17,40 @@ This Python script allows you to search for potential leaked credentials (e.g., 
    git clone https://github.com/f141ne0/regexscan.git
    ```
 
-2. Install the required Python libraries:
+2. Navigate to the project directory:
    ```bash
-   pip install requests colorama
+   cd regexscan
    ```
+
+3. Ensure you have Go installed on your system.
 
 ## Usage
 
-1. Add your desired regex patterns to the `regex_patterns.txt` file. Each pattern should be on a separate line.
+### 1. Prepare Configuration Files
 
-2. Run the script `leaked_credentials_checker.py` with the target URL:
-   ```bash
-   python leaked_credentials_checker.py --url "https://example.com"
-   ```
+Place the following files in the `config` directory relative to the project:
 
-   Replace `"https://example.com"` with the URL of the webpage you want to scan.
+- `banner.txt`: Custom ASCII art banner to display at the beginning of the tool execution.
+- `regex_patterns.txt`: Regex patterns used for detecting potential leaked credentials.
 
-3. The script will fetch the webpage content and search for potential leaked credentials based on the regex patterns provided in `regex_patterns.txt`.
+### 2. Run the Tool
 
-## Regex Patterns
+Execute the tool by providing one or more URLs to scan:
+```bash
+go run main.go https://example.com 
+```
 
-You can customize the regex patterns in the `regex_patterns.txt` file to match specific formats or keywords associated with leaked credentials. Refer to the provided sample patterns for common credential-related terms.
+The tool will scan each provided URL for potential leaked credentials based on the configured regex patterns.
+
+## Customization
+
+- **Regex Patterns**: Modify `regex_patterns.txt` to add, remove, or modify regex patterns based on specific credential formats to detect.
+- **Banner**: Update `banner.txt` with a custom ASCII art banner to personalize the tool's output.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions, improvements, or new features to add, feel free to open an issue or submit a pull request.
+Contributions are welcome! If you have suggestions, feature requests, or want to report issues, please open an issue or pull request on GitHub.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-**Disclaimer**: Use this tool responsibly and only on web pages that you have permission to test. Do not use it for illegal or unauthorized purposes.
-
