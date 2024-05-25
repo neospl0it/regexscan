@@ -44,6 +44,14 @@ Regexscan is a simple bash script designed to search for leaked credentials in t
 
 Output will display any found credentials along with their context in the fetched content.
 
+```bash
+┌──(f141㉿neo)-[~/regexscan]
+└─$ ./regexscan.sh --url https://ope******.gov.*n/
+Searching for leaked credentials in https://ope******.gov.*n/...
+apiKey: "A***SyCGXNhyQ_*************Q7VoZrVAw3GM"
+```
+
+
 ## Regex Patterns
 
 The script searches for a wide variety of credential formats including, but not limited to:
