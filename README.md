@@ -25,7 +25,7 @@ Regexscan is a simple bash script designed to search for leaked credentials in t
 2. Make the script executable:
 
     ```bash
-    chmod +x gegexscan.sh
+    chmod +x regexscan.sh
     ```
 
 3. Run the script with the `--url` parameter:
