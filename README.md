@@ -46,8 +46,8 @@ Output will display any found credentials along with their context in the fetche
 
 ```bash
 ┌──(f141㉿neo)-[~/regexscan]
-└─$ ./regexscan.sh --url https://ope******.gov.*n/
-Searching for leaked credentials in https://ope******.gov.*n/...
+└─$ ./regexscan.sh --url https://*pe******.gov.***/
+Searching for leaked credentials in https://*pe******.gov.***/...
 apiKey: "A***SyCGXNhyQ_*************Q7VoZrVAw3GM"
 ```
 
